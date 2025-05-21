@@ -14,53 +14,53 @@ Programoje nurodomas pilnas aplanko kelias ir galutinis kableliais atskirtų rei
 
 Automatizuoja kitų programų vykdymą nurodytant lokalaus aplanko, kuriame laikomi projektai, pilną kelią bei naudojamos programos pilną kelią. Iš aplanko imami visi projektai ir su jais paleidžiama atitinkama programa.
 
-## 4. dependabot_repo_getter
+## 3. dependabot_repo_getter
 
 Suranda ir į tekstinį failą išsaugo projektus kurie naudoja Dependabot (jų pavadinimus ir savininkus), kurie randami naudojant GitHub REST API.
 
 Programoje nustatomi dependabot.yml dydžio rėžiai, kurie padeda apeiti GitHub puslapių ribotumus ir rezultatų tekstinio failo pavadinimas.
 
-## 5. dependency_tracker
+## 4. dependency_tracker
 
 Analizuoja projekto projektinius (csproj) failus ir suskaičiuoja bendrą projekto naudojamų priklausomybių kiekį tam tikru metu. Galutiniai rezultatai išrašomi į kableliais atskirtų reikšmių failą.
 
 Programai į parametrus paduodami pilnas kelias į lokaliai klonuotą projektą.
 
-## 6. depenency_counter
+## 5. depenency_counter
 
 Suranda visus projektus lokaliam aplanke ir apskaičiuoja jų priklausomybių kiekį bei bendrą visų projektų priklausomybių kiekį šiuo metu. Programa rezultatus surašo į kableliais atskirtų reikšmių failą.
 
 Programoje galima nurodyti pilną kelią lokalaus aplanko, kuriame laikomi projektai bei kableliais atskirtų reikšmių rezultatų failo pavadinimą.
 
-## 7. fork_checker
+## 6. fork_checker
 
 Patikrina, ar tekstiniame faile išsaugoti projektai (faile saugomi projektų savininkai ir pavadinimai) yra šakotiniai (angl. fork). Rezultatai išrašomi į terminalą.
 
-## 8. libyear_tracker_normalized
+## 7. libyear_tracker_normalized
 
 Apskaičiuoja projekto visų priklausomybių vidutinį amžių tam tikru metu ir surašo atsakymus į kableliais atskirtų reikšmių failą.
 
 Programoje galima nustatyti kableliais atskirtų reikšmių rezultatinių failų pavadinimus Dependabot naudojantiems ir nenaudojantiems projektams. Į programos parametrus paduodamas projekto, kurio vidutinį priklausomybės amžių norima išanalizuoti, pilnas kelias į lokalų aplanką.
 
-## 9. libyear_tracker_standard
+## 8. libyear_tracker_standard
 
 Apskaičiuoja projekto visų priklausomybių amžiaus visumą tam tikru metu ir surašo atsakymus į kableliais atskirtų reikšmių failą.
 
 Programoje galima nustatyti kableliais atskirtų reikšmių rezultatinių failų pavadinimus Dependabot naudojantiems ir nenaudojantiems projektams. Į programos parametrus paduodamas projekto, kurio bendrą priklausomybių amžių norima išanalizuoti, pilnas kelias į lokalų aplanką.
 
-## 10. local_bot_checker
+## 9. local_bot_checker
 
 Nustato, ar projektuose, kurie klonuoti į lokalų aplanką, yra repozitorijos pakeitimų sukurtų naudojant automatinius priklausomybės atnaujinimo įrankius. Ši programa naudojama kaip papildoma patikra projektams, po non_bot_repo_getter pargramos daromos patikros ir klonavimo į lokalų aplanką. Galutiniai rezultatai spausdinami į terminalą.
 
 Programoje galima nustatyti skirtingų automatinių priklausomybių atnaujinimo įrankių, dėl kurių bus tikrinami projekto atnaujinimai, pavadinimus bei lokalaus aplanko, kuriame laikomi projektai, pilnas kelias.
 
-## 11. non_bot_repo_getter
+## 10. non_bot_repo_getter
 
 Suranda ir į tekstinį failą išsaugo projektus, kurie nenaudoja Dependabot ar kitų automatinių priklausomybių versijų atnaujinimo įrankių, (jų pavadinimus ir savininkus), kurie randami naudojant GitHub REST API.
 
 Programoje nustatomi projektų sukūrimo datų laikotarpiai siekiant apeiti GitHub REST API puslapių ribotumus, tikrinamų automatinių priklausomybių atnaujinimo įrankių pavadinimai, maksimalus projektų kiekis grąžinamas iš GitHub REST API, rezultatų tekstinio failo pavadinimas. Taip pat galima nurodyti ir egzistuojančio rezultatų tekstinio failo pavadinimą jei programa paleidžiama daugiau nei vieną kartą (šiame faile laikomi projektai bus netikrinami kuriant GitHub REST API užklausą).
 
-## 12. repo_cloner
+## 11. repo_cloner
 Skaitant tekstinį failą, kuriame nurodyti projektų savininkai ir pavadinimai (formatu savininkas/pavadinimas), atitinkami projektai klonuojami iš GitHub sistemos.
 
 Programoje galima nustatyti projektų tekstinio failo pilną kelią bei aplanko, į kurį norima klonuoti visus gitHub sistemoje rastus projektus, pilną kelią.
