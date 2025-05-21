@@ -8,12 +8,23 @@ HEADERS = {
     "X-GitHub-Api-Version": "2022-11-28"
 }
 
-BOT_AUTHORS = ["dependabot", "renovate-bot", "depfu", "greenkeeper[bot]"]
-SEARCH_QUERY = "language:C# stars:>=10"
+BOT_AUTHORS = ["dependabot", "depfu", "greenkeeper", "pyup", "renovate"]
 MAX_REPOS = 200
 OUTPUT_FILE = "non_bot_repos.txt"
 EXISTING_FILE = "non_bot_repos_done.txt"
 
+DATE_RANGES = [("2022-01-01", "2022-01-15"), ("2022-01-16", "2022-01-30"),
+        ("2022-02-01", "2022-02-15"), ("2022-02-16", "2022-02-28"),
+        ("2022-03-01", "2022-03-15"), ("2022-03-16", "2022-03-30"),
+        ("2022-04-01", "2022-04-15"), ("2022-04-16", "2022-04-30"),
+        ("2022-05-01", "2022-05-15"), ("2022-05-16", "2022-05-30"),
+        ("2022-06-01", "2022-06-15"), ("2022-06-16", "2022-06-30"),
+        ("2022-07-01", "2022-07-15"), ("2022-07-16", "2022-07-30"),
+        ("2022-08-01", "2022-08-15"), ("2022-08-16", "2022-08-30"),
+        ("2022-09-01", "2022-09-15"), ("2022-09-16", "2022-09-30"),
+        ("2022-10-01", "2022-10-15"), ("2022-10-16", "2022-10-30"),
+        ("2022-11-01", "2022-11-15"), ("2022-11-16", "2022-11-30"),
+        ("2022-12-01", "2022-12-15"), ("2022-12-16", "2022-12-30")]
 
 def load_existing_repos():
     """Load previously found repositories from file."""
@@ -29,19 +40,6 @@ def fetch_repositories(existing_repos):
     
     for start_date, end_date in DATE_RANGES:
         page = 1
-
-        DATE_RANGES = [("2022-01-01", "2022-01-15"), ("2022-01-16", "2022-01-30"),
-                ("2022-02-01", "2022-02-15"), ("2022-02-16", "2022-02-28"),
-                ("2022-03-01", "2022-03-15"), ("2022-03-16", "2022-03-30"),
-                ("2022-04-01", "2022-04-15"), ("2022-04-16", "2022-04-30"),
-                ("2022-05-01", "2022-05-15"), ("2022-05-16", "2022-05-30"),
-                ("2022-06-01", "2022-06-15"), ("2022-06-16", "2022-06-30"),
-                ("2022-07-01", "2022-07-15"), ("2022-07-16", "2022-07-30"),
-                ("2022-08-01", "2022-08-15"), ("2022-08-16", "2022-08-30"),
-                ("2022-09-01", "2022-09-15"), ("2022-09-16", "2022-09-30"),
-                ("2022-10-01", "2022-10-15"), ("2022-10-16", "2022-10-30"),
-                ("2022-11-01", "2022-11-15"), ("2022-11-16", "2022-11-30"),
-                ("2022-12-01", "2022-12-15"), ("2022-12-16", "2022-12-30")]
         
         while len(repos) < MAX_REPOS:
             exclude_query = " ".join(f"-repo:{repo}" for repo in existing_repos)
@@ -59,14 +57,14 @@ def fetch_repositories(existing_repos):
                 if repo_full_name not in existing_repos:
                     repos.append(item)
 
-            if len(response["items"]) < 30:  # No more results
+            if len(response["items"]) < 30:
                 break
 
             page += 1
-            time.sleep(2)  # Avoid hitting rate limits
+            time.sleep(2)
 
         if len(repos) >= MAX_REPOS:
-            break  # Stop if we reached enough new repositories
+            break
 
     return repos[:MAX_REPOS]
 
@@ -90,9 +88,9 @@ def has_bot_pr(owner, repo):
                 return True
 
         page += 1
-        time.sleep(1)  # Avoid rate limits
+        time.sleep(1)
 
-    return False  # No bot-created PRs found
+    return False
 
 def main():
     existing_repos = load_existing_repos()
@@ -112,10 +110,9 @@ def main():
             filtered_repos.append(full_name)
 
         if len(filtered_repos) >= MAX_REPOS:
-            break  # Stop when we reach the required count
+            break  
 
-    # Save new results
-    with open(OUTPUT_FILE, "a") as file:  # Append to the existing file
+    with open(OUTPUT_FILE, "a") as file:
         for repo in filtered_repos:
             file.write(repo + "\n")
 

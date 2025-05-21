@@ -39,7 +39,6 @@ def count_dependencies_in_all_repos(base_folder, output_csv="non_bot_dependency_
 
     print(f"\nTotal dependencies across all projects: {grand_total}")
 
-    # Write to CSV
     with open(output_csv, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["Project", "Dependency Count"])
@@ -49,6 +48,5 @@ def count_dependencies_in_all_repos(base_folder, output_csv="non_bot_dependency_
     print(f"Results written to {output_csv}")
 
 if __name__ == "__main__":
-    # Update this path to your folder containing multiple .NET/C# repos
     base_folder = r"D:\\bakis\\non_bot_repos_examine"
     count_dependencies_in_all_repos(base_folder)

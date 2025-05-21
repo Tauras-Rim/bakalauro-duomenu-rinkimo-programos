@@ -5,6 +5,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 from datetime import datetime
 from collections import defaultdict
+import argparse
 
 def run_command(command, cwd=None):
     result = subprocess.run(
@@ -100,7 +101,6 @@ def write_results_to_csv(results, repo_path, output_file="non_bot_dependency_tre
     print(f"\nResults saved to {output_file}")
 
 if __name__ == "__main__":
-    import argparse
     parser = argparse.ArgumentParser(description="Track total dependency count over time for a .NET project.")
     parser.add_argument("repo_path", help="Path to the repository")
     args = parser.parse_args()
