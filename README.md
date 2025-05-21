@@ -1,5 +1,7 @@
 # Duomenų rinkimui sukurtos ir tyrime naudotos programos
 
+Šioje repozitorijoje laikomos visos bakalauro metu sukurtos ir panaudotos programos bei jų trumpas paaiškinimas.
+
 Programose, kurios naudoja GitHub REST API reikia nurodyti savo asmeninį Git žetoną (angl. token). Šios programos yra: dependabot_repo_getter, fork_checker, local_bot_checker, non_bot_repo_getter.
 
 ## 1. activity_checker
