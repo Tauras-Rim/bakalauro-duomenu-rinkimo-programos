@@ -24,24 +24,16 @@ Patikrina, ar tekstiniame faile išsaugoti projektai (faile saugomi projektų sa
 
 
 ### 4. repo_cloner
+
 Skaitant tekstinį failą, kuriame nurodyti projektų savininkai ir pavadinimai (formatu savininkas/pavadinimas), atitinkami projektai klonuojami iš GitHub sistemos.
 
 Programoje galima nustatyti projektų tekstinio failo pilną kelią bei aplanko, į kurį norima klonuoti visus gitHub sistemoje rastus projektus, pilną kelią.
 
+### 5. local_bot_checker
 
-## Projektų priklausomybių amžiaus sekimo programos
+Nustato, ar projektuose, kurie klonuoti į lokalų aplanką, yra repozitorijos pakeitimų sukurtų naudojant automatinius priklausomybės atnaujinimo įrankius. Ši programa naudojama kaip papildoma patikra projektams, po non_bot_repo_getter pargramos daromos patikros ir klonavimo į lokalų aplanką. Galutiniai rezultatai spausdinami į terminalą.
 
-### 1. libyear_tracker_normalized
-
-Apskaičiuoja projekto visų priklausomybių vidutinį amžių tam tikru metu ir surašo atsakymus į kableliais atskirtų reikšmių failą.
-
-Programoje galima nustatyti kableliais atskirtų reikšmių rezultatinių failų pavadinimus Dependabot naudojantiems ir nenaudojantiems projektams. Į programos parametrus paduodamas projekto, kurio vidutinį priklausomybės amžių norima išanalizuoti, pilnas kelias į lokalų aplanką.
-
-### 2. libyear_tracker_standard
-
-Apskaičiuoja projekto visų priklausomybių amžiaus visumą tam tikru metu ir surašo atsakymus į kableliais atskirtų reikšmių failą.
-
-Programoje galima nustatyti kableliais atskirtų reikšmių rezultatinių failų pavadinimus Dependabot naudojantiems ir nenaudojantiems projektams. Į programos parametrus paduodamas projekto, kurio bendrą priklausomybių amžių norima išanalizuoti, pilnas kelias į lokalų aplanką.
+Programoje galima nustatyti skirtingų automatinių priklausomybių atnaujinimo įrankių, dėl kurių bus tikrinami projekto atnaujinimai, pavadinimus bei lokalaus aplanko, kuriame laikomi projektai, pilnas kelias.
 
 ## Projektų aktyvumo ir dydžio matavimo programos
 
@@ -62,6 +54,20 @@ Programoje galima nurodyti pilną kelią lokalaus aplanko, kuriame laikomi proje
 Analizuoja projekto projektinius (csproj) failus ir suskaičiuoja bendrą projekto naudojamų priklausomybių kiekį tam tikru metu. Galutiniai rezultatai išrašomi į kableliais atskirtų reikšmių failą.
 
 Programai į parametrus paduodami pilnas kelias į lokaliai klonuotą projektą.
+
+## Projektų priklausomybių amžiaus sekimo programos
+
+### 1. libyear_tracker_normalized
+
+Apskaičiuoja projekto visų priklausomybių vidutinį amžių tam tikru metu ir surašo atsakymus į kableliais atskirtų reikšmių failą.
+
+Programoje galima nustatyti kableliais atskirtų reikšmių rezultatinių failų pavadinimus Dependabot naudojantiems ir nenaudojantiems projektams. Į programos parametrus paduodamas projekto, kurio vidutinį priklausomybės amžių norima išanalizuoti, pilnas kelias į lokalų aplanką.
+
+### 2. libyear_tracker_standard
+
+Apskaičiuoja projekto visų priklausomybių amžiaus visumą tam tikru metu ir surašo atsakymus į kableliais atskirtų reikšmių failą.
+
+Programoje galima nustatyti kableliais atskirtų reikšmių rezultatinių failų pavadinimus Dependabot naudojantiems ir nenaudojantiems projektams. Į programos parametrus paduodamas projekto, kurio bendrą priklausomybių amžių norima išanalizuoti, pilnas kelias į lokalų aplanką.
 
 ## Papildomos programos
 
