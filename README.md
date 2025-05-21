@@ -4,7 +4,7 @@
 
 Programose, kurios naudoja GitHub REST API reikia nurodyti savo asmeninį Git žetoną (angl. token). Šios programos yra: dependabot_repo_getter, fork_checker, local_bot_checker, non_bot_repo_getter.
 
-## Projektų surinkimo iš GitHub sistemos programos
+## Projektų surinkimo programos
 
 ### 1. dependabot_repo_getter
 
